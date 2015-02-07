@@ -16,7 +16,15 @@ angular.module('thankDonateApp')
     }
     
     $scope.publish = function () {
-      Publisher.publish("HELLOOO");
+      var articleData = packagePost();
+      Publisher.publish(articleData);
+    }
+    
+    function packagePost () {
+      return {
+        title: $scope.title,
+        body: $scope.htmlPost
+      };
     }
     
   });
