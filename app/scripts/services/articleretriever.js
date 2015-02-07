@@ -8,11 +8,15 @@
  * Service in the thankDonateApp.
  */
 angular.module('thankDonateApp')
-  .service('ArticleRetriever', function () {
-    var ret = {};
-  
+.service('ArticleRetriever', function (FB, $firebase) {
+    var ret = {},
+        articlesDB = FB.getDB('articles');
+
     ret.getAll = function () {
-      return [
+        return articlesDB.$asArray();
+        
+        /*      
+        return [
         {
           title: "Hello World",
           author: "Guy Riese",
@@ -27,8 +31,16 @@ angular.module('thankDonateApp')
           timestamp: Date.now(),
           article_id: 2
         }
-      ]
+      ]*/
+    };
+
+    ret.getArticleByID = function (article_id) {
+        return {
+            getHtml: function () {
+                return "<h1>PORCA EVA</h1>"
+            }
+        }
     }
-    
+
     return ret;
-  });
+});

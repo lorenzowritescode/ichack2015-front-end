@@ -11,8 +11,8 @@ describe('Service: Publisher', function () {
     Publisher = _Publisher_;
   }));
 
-  it('should do something', function () {
-    expect(!!Publisher).toBe(true);
-  });
+//  it('should do something', function () {
+//    expect(!!Publisher).toBe(true);
+//  });
 
 });
