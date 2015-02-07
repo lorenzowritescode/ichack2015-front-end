@@ -76,6 +76,11 @@ angular.module('thankDonateApp')
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl'
       })
+    
+      .whenAuthenticated('/create', {
+        templateUrl: 'views/create.html',
+        controller: 'CreateCtrl'
+      })
 
       .when('/chat', {
         templateUrl: 'views/chat.html',

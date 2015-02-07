@@ -1,0 +1,16 @@
+<div id="editor" text-angular ng-show="!preview" ng-model="htmlPost">
+</div>
+
+<div id="preview" ng-show="preview">
+  {{htmlPost}}
+</div>
+<div>
+  <button class="btn btn-success" ng-click="togglePreview()">
+    <span class="glyphicon glyphicon-search"></span>
+      Preview
+  </button> 
+  <button class="btn btn-success" ng-click="publish()">
+    <span class="glyphicon glyphicon-ok"></span>
+     Publish
+  </button> 
+</div>

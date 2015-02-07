@@ -16,5 +16,7 @@ angular.module('thankDonateApp', [
     'ngSanitize',
     'firebase',
     'firebase.utils',
-    'simpleLogin'
+    'simpleLogin',
+    'btford.markdown',
+    'textAngular'
   ]);
