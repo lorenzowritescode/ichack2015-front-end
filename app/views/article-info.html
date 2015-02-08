@@ -1,6 +1,6 @@
 <div class="article-container row">
-    <div class="article-title" ng-click="goto('read', article.getTitle())">{{article.getTitle()}}</div>
-    <div class="article-subtitle" ng-bind-html="article.getBlurb()"></div>
-    <div class="article-author" ng-click="goto('author', article.uid)">by {{article.getAuthor()}}</div>
-    <div class="article-timestamp">{{article.getTimeStamp()}}</div>
+    <div class="article-title" ng-click="goto('read', articleID)">{{title}}</div>
+    <div class="article-subtitle" ng-bind-html="blurb"></div>
+    <div class="article-author" ng-click="goto('author', article.uid)">by {{authorName}}</div>
+    <div class="article-timestamp">{{timestamp}}</div>
 </div>

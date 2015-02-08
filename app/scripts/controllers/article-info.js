@@ -8,29 +8,19 @@
  * Controller of the thankDonateApp
  */
 angular.module('thankDonateApp')
-.controller('ArticleInfoCtrl', function ($scope, UserProvider, AppRouter) {    
-    _.extend($scope.article, {
-        getTitle: function () {
-            return this.data.title;
-        },
-        getTimeStamp: function () {
-            return new Date(this.timestamp)
+.controller('ArticleInfoCtrl', function ($scope, UserProvider, AppRouter) {     
+    $scope.title = $scope.article.data.title;
+    $scope.timestamp = new Date($scope.article.timestamp)
             .toDateString();
-        },
-        getAuthor: function () {
-            return UserProvider
-            .getUserData(this.uid, function (snap) {
-                
-                return snap.val().name;
-            });
-            
-//            console.log(userData);
-//            return userData.name;
-        },
-        getBlurb: function () {
-            return this.data.body;
-        }
+    $scope.blurb = $scope.article.data.body;
+    $scope.goto = AppRouter.goto;
+    
+    var user = UserProvider
+        .getUserData($scope.article.uid);
+    
+    user.$loaded(function (val) { 
+        $scope.authorName = val.name;
     })
     
-    $scope.goto = AppRouter.goto;
+    
 });
