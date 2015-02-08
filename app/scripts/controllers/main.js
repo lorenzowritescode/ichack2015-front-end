@@ -10,4 +10,6 @@
 angular.module('thankDonateApp')
   .controller('MainCtrl', function ($scope, ArticleRetriever) {
     $scope.articles = ArticleRetriever.getAll();
+    
+    console.log($scope.articles);
   });

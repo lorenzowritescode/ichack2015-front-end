@@ -86,7 +86,11 @@ angular.module('thankDonateApp')
         templateUrl: 'views/author.html',
         controller: 'AuthorCtrl'
     })
-
+    
+    .when('/decus/:userID', {
+        templateUrl: 'views/decusdata.html',
+        controller: 'DecusDataCtrl'
+    })
     .when('/read/:articleID', {
         templateUrl: 'views/read.html',
         controller: 'ReadCtrl'

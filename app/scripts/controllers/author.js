@@ -8,18 +8,21 @@
  * Controller of the thankDonateApp
  */
 angular.module('thankDonateApp')
-  .controller('AuthorCtrl', function ($scope, $routeParams, ArticleRetriever) {
+  .controller('AuthorCtrl', function ($scope, $routeParams, ArticleRetriever, UserProvider) {
     
     var authorID = $routeParams.authorID;
+    
+    var user = UserProvider.getUserData(authorID);
+    
+    user.$loaded(function (snap) {
+        $scope.name = snap.name;
+    })
     
     var articles = ArticleRetriever
         .getArticlesByUserID(authorID);
     
-    articles.$loaded(function (data) {
-        console.log(data);
-        
+    articles.$loaded(function (data) {        
         $scope.articles = _.filter(data, function (d) {
-            console.log(d, d.uid, authorID);
             return d.uid == authorID;
         });
     })
