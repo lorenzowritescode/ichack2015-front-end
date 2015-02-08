@@ -12,10 +12,14 @@ angular.module('thankDonateApp')
     var factory = {};
     
     factory.getDB = function (subdir) {
-      var path = FBURL + '/' + subdir,
-          ref = new Firebase(path);
-      
-      return $firebase(ref);
+      return $firebase(this.getRef(subdir));
+    }
+    
+    factory.getRef = function (subdir) {
+        var path = FBURL + '/' + subdir,
+            ref = new Firebase(path);
+        
+        return ref;
     }
     
     return factory;

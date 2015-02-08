@@ -1,7 +1,4 @@
-
+<div class="welcome">Hello, you.</div>
 <div ng-repeat="article in  articles">
-    <div ng-repeat="(key, obj) in article">
-        <strong>{{key}}</strong>
-        <p>{{obj}}</p>
-    </div>
+    <article-info article="article" />
 </div>

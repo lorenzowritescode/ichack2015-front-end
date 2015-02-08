@@ -90,3 +90,40 @@ body {
     border-bottom: 0;
   }
 }
+
+.btn-container {
+    margin: 30px;
+}
+
+.float-right {
+    float: right;
+}
+
+.article-title {
+    font-family: Museo;
+    font-size: 40px;
+}
+
+.article-subtitle {
+    font-family: Avenir;
+    font-size: 24px;
+}
+
+.article-author {
+    font-size: 18px;
+}
+
+.article-container {
+    margin: 15px;
+}
+.article-container:hover {
+    padding-left: 10px;
+    background-color: gainsboro;
+    border-radius: 5px;
+}
+
+.welcome {
+        font-family: Futura;
+        text-align: center;
+        font-size: 60px;
+}

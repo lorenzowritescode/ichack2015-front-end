@@ -1,16 +1,23 @@
+
+<input class="form-control" placeholder="Enter a title for this story" ng-model="title">
+<hr>
 <div id="editor" text-angular ng-show="!preview" ng-model="htmlPost">
 </div>
 
 <div id="preview" ng-show="preview">
-  {{htmlPost}}
+    {{htmlPost}}
 </div>
-<div>
-  <button class="btn btn-success" ng-click="togglePreview()">
-    <span class="glyphicon glyphicon-search"></span>
-      Preview
-  </button> 
-  <button class="btn btn-success" ng-click="publish()">
-    <span class="glyphicon glyphicon-ok"></span>
-     Publish
-  </button> 
+<div class= "btn-container float-right">
+    <button class="btn btn-success" ng-click="togglePreview()">
+        <span class="glyphicon glyphicon-search"></span>
+        Preview
+    </button> 
+    <button class="btn btn-success" ng-click="publish()">
+        <span class="glyphicon glyphicon-ok"></span>
+        Publish
+    </button> 
+    <div class="alert alert-danger" ng-show="postError !== undefined && postError != null">
+        Whoops! There were problems with your post:
+        {{postError}}
+    </div>
 </div>
